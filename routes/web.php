@@ -79,7 +79,8 @@ Route::get('/review/index',[ReviewController::class,'index'])->name('review.inde
 //order
 Route::get('/order/index',[OrderController::class,'index'])->name('order.index');
 
+Route::get('/test',[OrderController::class,'index'])->name('order.index');
 
-//logout
+
 
 

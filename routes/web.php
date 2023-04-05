@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
@@ -79,8 +80,15 @@ Route::get('/review/index',[ReviewController::class,'index'])->name('review.inde
 //order
 Route::get('/order/index',[OrderController::class,'index'])->name('order.index');
 
-Route::get('/test',[OrderController::class,'index'])->name('order.index');
-
+//front
+Route::get('/front/home',[FrontController::class,'index'])->name('front.index');
+Route::get('/front/about',[FrontController::class,'about'])->name('front.about');
+Route::get('/front/shop',[FrontController::class,'shop'])->name('front.shop');
+Route::get('/front/shop_single',[FrontController::class,'shop_single'])->name('front.shop_single');
+Route::get('/front/contact',[FrontController::class,'contact'])->name('front.contact');
+Route::get('/front/cart',[FrontController::class,'cart'])->name('front.cart');
+Route::get('/front/checkout',[FrontController::class,'checkout'])->name('front.checkout');
+Route::get('/front/thankyou',[FrontController::class,'thankyou'])->name('front.thankyou');
 
 
 

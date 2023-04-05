@@ -81,14 +81,14 @@ Route::get('/review/index',[ReviewController::class,'index'])->name('review.inde
 Route::get('/order/index',[OrderController::class,'index'])->name('order.index');
 
 //front
-Route::get('/front/home',[FrontController::class,'index'])->name('front.index');
-Route::get('/front/about',[FrontController::class,'about'])->name('front.about');
-Route::get('/front/shop',[FrontController::class,'shop'])->name('front.shop');
-Route::get('/front/shop_single',[FrontController::class,'shop_single'])->name('front.shop_single');
-Route::get('/front/contact',[FrontController::class,'contact'])->name('front.contact');
-Route::get('/front/cart',[FrontController::class,'cart'])->name('front.cart');
-Route::get('/front/checkout',[FrontController::class,'checkout'])->name('front.checkout');
-Route::get('/front/thankyou',[FrontController::class,'thankyou'])->name('front.thankyou');
+Route::get('/',[FrontController::class,'index'])->name('front.index');
+Route::get('/about',[FrontController::class,'about'])->name('front.about');
+Route::get('/shop',[FrontController::class,'shop'])->name('front.shop');
+Route::get('/shop_single',[FrontController::class,'shop_single'])->name('front.shop_single');
+Route::get('/contact',[FrontController::class,'contact'])->name('front.contact');
+Route::get('/cart',[FrontController::class,'cart'])->name('front.cart');
+Route::get('/checkout',[FrontController::class,'checkout'])->name('front.checkout');
+Route::get('/thankyou',[FrontController::class,'thankyou'])->name('front.thankyou');
 
 
 

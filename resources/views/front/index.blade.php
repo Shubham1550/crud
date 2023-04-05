@@ -10,7 +10,7 @@
             <div class="intro-text text-center text-md-left">
               <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla. </p>
               <p>
-                <a href="#" class="btn btn-sm btn-primary">Shop Now</a>
+                <a href="{{route('front.shop')}}" class="btn btn-sm btn-primary">Shop Now</a>
               </p>
             </div>
           </div>
@@ -114,7 +114,7 @@
                   </div>
                 </div>
               </div>
-              <div class="item">
+              {{-- <div class="item">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
                     <img src="{{asset('images/shoe_1.jpg')}}" alt="Image placeholder" class="img-fluid">
@@ -161,7 +161,7 @@
                     <p class="text-primary font-weight-bold">$50</p>
                   </div>
                 </div>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>
@@ -183,7 +183,7 @@
             <h2><a href="#">50% less in all items</a></h2>
             <p class="post-meta mb-4">By <a href="#">Carl Smith</a> <span class="block-8-sep">&bullet;</span> September 3, 2018</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
-            <p><a href="#" class="btn btn-primary btn-sm">Shop Now</a></p>
+            <p><a href="{{route('front.shop')}}" class="btn btn-primary btn-sm">Shop Now</a></p>
           </div>
         </div>
       </div>

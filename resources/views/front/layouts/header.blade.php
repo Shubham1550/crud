@@ -24,7 +24,7 @@
                 <li>
                   <a href="{{route('front.cart')}}" class="site-cart">
                     <span class="icon icon-shopping_cart"></span>
-                    <span class="count">2</span>
+                    <span class="count">0</span>
                   </a>
                 </li>
                 <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
@@ -38,9 +38,9 @@
     <nav class="site-navigation text-right text-md-center" role="navigation">
       <div class="container">
         <ul class="site-menu js-clone-nav d-none d-md-block">
-          <li class="has-children">
+          <li>
             <a href="{{route('front.index')}}">Home</a>
-            <ul class="dropdown">
+            {{-- <ul class="dropdown">
               <li><a href="#">Menu One</a></li>
               <li><a href="#">Menu Two</a></li>
               <li><a href="#">Menu Three</a></li>
@@ -52,19 +52,17 @@
                   <li><a href="#">Menu Three</a></li>
                 </ul>
               </li>
-            </ul>
+            </ul> --}}
           </li>
-          <li class="has-children">
+          <li>
             <a href="{{route('front.about')}}">About</a>
-            <ul class="dropdown">
+            {{-- <ul class="dropdown">
               <li><a href="#">Menu One</a></li>
               <li><a href="#">Menu Two</a></li>
               <li><a href="#">Menu Three</a></li>
-            </ul>
+            </ul> --}}
           </li>
           <li><a href="{{route('front.shop')}}">Shop</a></li>
-          <li><a href="#">Catalogue</a></li>
-          <li><a href="#">New Arrivals</a></li>
           <li><a href="{{route('front.contact')}}">Contact</a></li>
         </ul>
       </div>

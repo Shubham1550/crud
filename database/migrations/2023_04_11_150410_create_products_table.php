@@ -19,6 +19,12 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->string('image');
             $table->string('category_id');
+            $table->string('sizes');
+            $table->string('brand_id');
+            $table->string('color_id');
+            $table->string('user_id');
+            $table->string('t_quantity');
+            $table->string('price');
             $table->timestamps();
         });
     }

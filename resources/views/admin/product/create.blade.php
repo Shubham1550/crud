@@ -1,4 +1,4 @@
-{{-- @extends('admin.layouts.master')
+@extends('admin.layouts.master')
 @section('content')
 @section('page')
 Product Form
@@ -56,28 +56,50 @@ Product Form
                   </div>
                   <div class="form-group">
                     <label for="title">Select Sizes:</label>
-                    <select name="sizes_id" select id="sizes_id" class="form-control" >
-                        <option value="" class="option_color">Select Category</option>
+                    <select name="sizes" select id="sizes" class="form-control" >
+                        <option value="" class="option_color">Select Sizes</option>
                         <option value="">M</option>
                         <option value="">L</option>
                         <option value="">X</option>
                         <option value="">XL</option>
                         <option value="">XXL</option>
-
-
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="title">Select Brand:</label>
                     <select name="brand_id" select id="brand_id" class="form-control" >
-                        <option value="{{old('category_id')}}" class="option_color">Select Category</option>
-                        @foreach ($categories as $c )
-                        <option value="{{$c->id}}">{{$c->name}}</option>
-
+                        <option value="{{old('brand_id')}}" class="option_color">Select Brand</option>
+                        @foreach ($brand as $b )
+                        <option value="{{$b->id}}">{{$b->name}}</option>
                         @endforeach
                     </select>
                   </div>
-
+                  <div class="form-group">
+                    <label for="title">Select Color:</label>
+                    <select name="color_id" select id="color_id" class="form-control" >
+                        <option value="{{old('color_id')}}" class="option_color">Select Color</option>
+                        @foreach ($color as $c )
+                        <option value="{{$c->id}}">{{$c->name}}</option>
+                        @endforeach
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="title">Select User:</label>
+                    <select name="user_id" select id="user_id" class="form-control" >
+                        <option value="{{old('user_id')}}" class="option_color">Select User</option>
+                        @foreach ($user as $u )
+                        <option value="{{$u->id}}">{{$u->name}}</option>
+                        @endforeach
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="title">Total Quantity:</label>
+                    <input type="number" class="form-control" id="t_quantity" name="t_quantity" placeholder="Enter total quantity">
+                  </div>
+                  <div class="form-group">
+                    <label for="title">Price:</label>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="Enter price">
+                  </div>
               </div>
               <!-- /.card-body -->
 
@@ -90,4 +112,4 @@ Product Form
       </div>
     </div>
 </section>
-@endsection --}}
+@endsection

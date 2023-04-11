@@ -30,6 +30,12 @@
                                     <th>Description</th>
                                     <th>Image</th>
                                     <th>Category</th>
+                                    <th>Sizes</th>
+                                    <th>Brand</th>
+                                    <th>Color</th>
+                                    <th>User</th>
+                                    <th>Total Quantity</th>
+                                    <th>Price</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -38,7 +44,7 @@
                                     <tr>
                                         <td>{{ $p->id }}</td>
                                         <td>{{ $p->title }}</td>
-                                        <td>{!! Str::words($p->description, 5, ' ...') !!}</td>
+                                        <td>{!! Str::words($p->description, 3, ' ...') !!}</td>
                                         <td>
                                             @if (empty($p->image))
                                                 <img src="{{ 'download.png' }}" width="50px" height="50px"
@@ -50,6 +56,24 @@
                                         </td>
                                         <td>
                                             {{@$p->category->name}}
+                                        </td>
+                                        <td>
+                                            {{$p->sizes}}
+                                        </td>
+                                        <td>
+                                            {{@$p->brand->name}}
+                                        </td>
+                                        <td>
+                                            {{@$p->color->name}}
+                                        </td>
+                                        <td>
+                                            {{@$p->user->name}}
+                                        </td>
+                                        <td>
+                                            {{$p->t_quantity}}
+                                        </td>
+                                        <td>
+                                            {{$p->price}}
                                         </td>
                                         <td><a href="{{ route('product.edit', $p->id) }}"><button type="button"
                                                     class="btn btn-success">Edit</button></a>

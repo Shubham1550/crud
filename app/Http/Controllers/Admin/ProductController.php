@@ -16,12 +16,12 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
-        $this->validate($request,[
-            'title'=>'required',
-            'description'=>'required',
-            'image'=>'required',
-            'category'=>'required'
-        ]);
+        // $this->validate($request,[
+        //     'title'=>'required',
+        //     'description'=>'required',
+        //     'image'=>'required',
+        //     'category'=>'required'
+        // ]);
         $product = new Product();
         $product -> title = $request-> title;
         $product -> description = $request-> description;
@@ -51,12 +51,12 @@ public function edit($id){
 }
 
 public function update(Request $request,$id){
-    $this->validate($request,[
-        'title'=>'required',
-        'description'=>'required',
-        'image'=>'required',
-        'category'=>'required'
-    ]);
+    // $this->validate($request,[
+    //     'title'=>'required',
+    //     'description'=>'required',
+    //     'image'=>'required',
+    //     'category'=>'required'
+    // ]);
     $product = Product::find($id);
     $product -> title = $request-> title;
     $product -> description = $request-> description;

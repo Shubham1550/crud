@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+{{-- @extends('admin.layouts.master')
 @section('content')
 @section('page')
 Product Form
@@ -54,6 +54,30 @@ Product Form
                         @endforeach
                     </select>
                   </div>
+                  <div class="form-group">
+                    <label for="title">Select Sizes:</label>
+                    <select name="sizes_id" select id="sizes_id" class="form-control" >
+                        <option value="" class="option_color">Select Category</option>
+                        <option value="">M</option>
+                        <option value="">L</option>
+                        <option value="">X</option>
+                        <option value="">XL</option>
+                        <option value="">XXL</option>
+
+
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="title">Select Brand:</label>
+                    <select name="brand_id" select id="brand_id" class="form-control" >
+                        <option value="{{old('category_id')}}" class="option_color">Select Category</option>
+                        @foreach ($categories as $c )
+                        <option value="{{$c->id}}">{{$c->name}}</option>
+
+                        @endforeach
+                    </select>
+                  </div>
+
               </div>
               <!-- /.card-body -->
 
@@ -66,4 +90,4 @@ Product Form
       </div>
     </div>
 </section>
-@endsection
+@endsection --}}

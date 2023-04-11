@@ -4,7 +4,7 @@
 <div class="bg-light py-3">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 mb-0"><a href="{{route('front.index')}}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Tank Top T-Shirt</strong></div>
+        <div class="col-md-12 mb-0"><a href="{{route('front.index')}}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{$product->title}}</strong></div>
       </div>
     </div>
   </div>
@@ -13,13 +13,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <img src="{{asset('images/cloth_1.jpg')}}" alt="Image" class="img-fluid">
+          <img src="{{asset('image/'.$product->image )}}" alt="image" class="img-fluid">
         </div>
         <div class="col-md-6">
-          <h2 class="text-black">Tank Top T-Shirt</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.</p>
-          <p class="mb-4">Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>
-          <p><strong class="text-primary h4">$50.00</strong></p>
+          <h2 class="text-black">{{$product->title}}</h2>
+          <p>{!! Str::words($product->description) !!}</p>
+          <p><strong class="text-primary h4">&#8377;50.00</strong></p>
           <div class="mb-1 d-flex">
             <label for="option-sm" class="d-flex mr-3 mb-3">
               <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>
@@ -63,18 +62,21 @@
       <div class="row">
         <div class="col-md-12">
           <div class="nonloop-block-3 owl-carousel">
+            @foreach ($data as $pro)
             <div class="item">
               <div class="block-4 text-center">
                 <figure class="block-4-image">
-                  <img src="{{asset('images/cloth_1.jpg')}}" alt="Image placeholder" class="img-fluid">
+
+                    <a href="{{route('front.shop_single',$pro->id)}}"><img src="{{asset('image/'. $pro->image)}}" alt="Image placeholder" class="img-fluid"></a>
                 </figure>
                 <div class="block-4-text p-4">
-                  <h3><a href="#">Tank Top</a></h3>
-                  <p class="mb-0">Finding perfect t-shirt</p>
-                  <p class="text-primary font-weight-bold">$50</p>
+                  <h3><a href="#">{{$pro->title}}</a></h3>
+                  <p class="mb-0">{!! Str::words($pro->description, 5, ' ...') !!}</p>
+                  <p class="text-primary font-weight-bold">&#8377;50</p>
                 </div>
               </div>
             </div>
+            @endforeach
             {{-- <div class="item">
               <div class="block-4 text-center">
                 <figure class="block-4-image">
@@ -128,6 +130,5 @@
       </div>
     </div>
   </div>
-
 @include('front.layouts.footer')
 @endsection

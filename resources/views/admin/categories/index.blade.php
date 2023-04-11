@@ -33,7 +33,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($user as $u)
+                                @foreach ($category as $u)
                                     <tr>
                                         <td>{{ $u->id }}</td>
                                         <td>{{ $u->name }}</td>
@@ -69,4 +69,4 @@
         </div>
     </div>
 </section>
-            @endsection
+@endsection

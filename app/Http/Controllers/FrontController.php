@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Front;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -11,7 +12,8 @@ class FrontController extends Controller
     //
 
     public  function index(){
-        return view('front.index');
+        $products = Product::take(3)->get();
+        return view('front.index',compact('products'));
     }
 
     public function about(){
@@ -19,20 +21,22 @@ class FrontController extends Controller
     }
 
     public function shop(){
-        // $product = Front::with('product')->get();
-        // dd($product);
-        return view('front.shop');
+        $products = Product::take(3)->get();
+        // dd($products);
+        return view('front.shop',compact('products'));
     }
 
-    public function shop_single(){
-        // $product = Front::with('product')->get();
-        // dd($product);
-        return view('front.shop_single');
+    public function shop_single($id){
+        $product = Product::find($id);
+        $data = Product::all();
+        // dd($products);
+        return view('front.shop_single',compact('product','data'));
     }
 
     public function contact(){
         return view('front.contact');
     }
+
 
     public function cart(){
         return view('front.cart');

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\OrderController;
@@ -26,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
@@ -80,11 +81,15 @@ Route::get('/review/index',[ReviewController::class,'index'])->name('review.inde
 //order
 Route::get('/order/index',[OrderController::class,'index'])->name('order.index');
 
+//contact
+Route::get('/contact/index',[ContactController::class,'index'])->name('contact.index');
+Route::post('/contact/store',[ContactController::class,'store'])->name('contact.store');
+
 //front
 Route::get('/',[FrontController::class,'index'])->name('front.index');
 Route::get('/about',[FrontController::class,'about'])->name('front.about');
 Route::get('/shop',[FrontController::class,'shop'])->name('front.shop');
-Route::get('/shop_single',[FrontController::class,'shop_single'])->name('front.shop_single');
+Route::get('/shop_single/{id}',[FrontController::class,'shop_single'])->name('front.shop_single');
 Route::get('/contact',[FrontController::class,'contact'])->name('front.contact');
 Route::get('/cart',[FrontController::class,'cart'])->name('front.cart');
 Route::get('/checkout',[FrontController::class,'checkout'])->name('front.checkout');

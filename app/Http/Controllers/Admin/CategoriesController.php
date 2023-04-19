@@ -36,8 +36,8 @@ class CategoriesController extends Controller
     }
 
     public function index(){
-        $user = Category::all();
-        return view('admin.categories.index', compact('user'));
+        $category = Category::all();
+        return view('admin.categories.index', compact('category'));
     }
 
     public function edit($id){

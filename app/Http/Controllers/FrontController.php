@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Color;
 use App\Models\Contact;
 use App\Models\Front;
 use App\Models\Product;
@@ -13,7 +15,8 @@ class FrontController extends Controller
 
     public  function index(){
         $products = Product::take(3)->get();
-        return view('front.index',compact('products'));
+        $category = Category::all();
+        return view('front.index',compact('products','category'));
     }
 
     public function about(){
@@ -22,8 +25,10 @@ class FrontController extends Controller
 
     public function shop(){
         $products = Product::take(3)->get();
+        $category = Category::all();
+        $color = Color::all();
         // dd($products);
-        return view('front.shop',compact('products'));
+        return view('front.shop',compact('products','category','color'));
     }
 
     public function shop_single($id){

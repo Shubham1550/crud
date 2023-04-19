@@ -76,7 +76,7 @@
                                             {{$p->price}}
                                         </td>
                                         <td><a href="{{ route('product.edit', $p->id) }}"><button type="button"
-                                                    class="btn btn-success">Edit</button></a>
+                                                    class="btn btn-success">Edit</button></a><br><br>
                                             <a href="{{ route('product.delete', $p->id) }}"><button type="button"
                                                     class="btn  btn-danger">Delete</button></a>
                                         </td>

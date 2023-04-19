@@ -18,7 +18,7 @@
         <div class="col-md-6">
           <h2 class="text-black">{{$product->title}}</h2>
           <p>{!! Str::words($product->description) !!}</p>
-          <p><strong class="text-primary h4">&#8377;50.00</strong></p>
+          <p><strong class="text-primary h4">&#8377;{{$product->price}}.00</strong></p>
           <div class="mb-1 d-flex">
             <label for="option-sm" class="d-flex mr-3 mb-3">
               <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>
@@ -72,7 +72,7 @@
                 <div class="block-4-text p-4">
                   <h3><a href="#">{{$pro->title}}</a></h3>
                   <p class="mb-0">{!! Str::words($pro->description, 5, ' ...') !!}</p>
-                  <p class="text-primary font-weight-bold">&#8377;50</p>
+                  <p class="text-primary font-weight-bold">&#8377;{{$pro->price}}.00</p>
                 </div>
               </div>
             </div>

@@ -55,14 +55,17 @@ class ProductController extends Controller
     $brand = Brand::all();
     $color = Color::all();
     $user = User::all();
-    dd($product);
+    // dd($product);
     return view('admin.product.index', compact('product','categories','brand','color','user'));
 }
 
 public function edit($id){
     $product= Product::find($id);
     $categories = Category::all();
-    return view('admin.product.edit', compact('product','categories'));
+    $brand = Brand::all();
+    $color = Color::all();
+    $user = User::all();
+    return view('admin.product.edit', compact('product','categories','brand','color','user'));
 }
 
 public function update(Request $request,$id){
@@ -84,6 +87,12 @@ public function update(Request $request,$id){
         $product->image = $filename;
     }
     $product -> category_id = $request-> category_id;
+    $product -> sizes = $request-> sizes;
+    $product -> color_id = $request-> color_id;
+    $product -> user_id = $request-> user_id;
+    $product -> t_quantity = $request-> t_quantity;
+    $product -> price = $request-> price;
+    $product -> brand_id = $request-> brand_id;
     // dd($user);
     $product-> save();
     return redirect()->route('product.index')->with('message','Data Updated Successfully!');

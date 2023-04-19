@@ -45,7 +45,7 @@ Product Form
                     <input type="file" class="form-control" id="image" aria-describedby="emailHelp" name="image">
                 </div>
                 <div class="form-group">
-                    <label for="title">Select Category:</label>
+                    <label for="category">Select Category:</label>
                     <select name="category_id" select id="category_id" class="form-control" >
                         <option value="{{old('category_id')}}" class="option_color">Select Category</option>
                         @foreach ($categories as $c )
@@ -55,18 +55,17 @@ Product Form
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="title">Select Sizes:</label>
+                    <label for="sizes">Select Sizes:</label>
                     <select name="sizes" select id="sizes" class="form-control" >
                         <option value="" class="option_color">Select Sizes</option>
-                        <option value="">M</option>
-                        <option value="">L</option>
-                        <option value="">X</option>
-                        <option value="">XL</option>
-                        <option value="">XXL</option>
+                        <option value="M">Small</option>
+                        <option value="L">Medium</option>
+                        <option value="X">Large</option>
+                        <option value="XL">Extra Large</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="title">Select Brand:</label>
+                    <label for="brand">Select Brand:</label>
                     <select name="brand_id" select id="brand_id" class="form-control" >
                         <option value="{{old('brand_id')}}" class="option_color">Select Brand</option>
                         @foreach ($brand as $b )
@@ -75,7 +74,7 @@ Product Form
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="title">Select Color:</label>
+                    <label for="color">Select Color:</label>
                     <select name="color_id" select id="color_id" class="form-control" >
                         <option value="{{old('color_id')}}" class="option_color">Select Color</option>
                         @foreach ($color as $c )
@@ -84,7 +83,7 @@ Product Form
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="title">Select User:</label>
+                    <label for="user">Select User:</label>
                     <select name="user_id" select id="user_id" class="form-control" >
                         <option value="{{old('user_id')}}" class="option_color">Select User</option>
                         @foreach ($user as $u )
@@ -93,11 +92,11 @@ Product Form
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="title">Total Quantity:</label>
+                    <label for="t_quantity">Total Quantity:</label>
                     <input type="number" class="form-control" id="t_quantity" name="t_quantity" placeholder="Enter total quantity">
                   </div>
                   <div class="form-group">
-                    <label for="title">Price:</label>
+                    <label for="price">Price:</label>
                     <input type="number" class="form-control" id="price" name="price" placeholder="Enter price">
                   </div>
               </div>

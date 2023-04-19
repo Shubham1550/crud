@@ -9,8 +9,8 @@ class Front extends Model
 {
     use HasFactory;
 
-    // public function product()
-    // {
-    //     return $this->hasOne(Product::class,'id','product_id');
-    // }
+    public function category()
+    {
+        return $this->hasOne(Category::class,'id','categories_id');
+    }
 }

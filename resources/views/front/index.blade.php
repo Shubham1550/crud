@@ -52,45 +52,25 @@
       </div>
     </div>
 
+    @foreach ($category as $c)
     <div class="site-section site-blocks-2">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
+          <div class="col-md-4">
             <a class="block-2-item" href="#">
-              <figure class="image">
-                <img src="{{asset('images/women.jpg')}}" alt="" class="img-fluid">
+              <figure class="block-4-image">
+                <img src="{{asset('image/' . $c->image)}}" alt="" class="img-fluid">
               </figure>
               <div class="text">
                 <span class="text-uppercase">Collections</span>
-                <h3>Women</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-            <a class="block-2-item" href="#">
-              <figure class="image">
-                <img src="{{asset('images/children.jpg')}}" alt="" class="img-fluid">
-              </figure>
-              <div class="text">
-                <span class="text-uppercase">Collections</span>
-                <h3>Children</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-            <a class="block-2-item" href="#">
-              <figure class="image">
-                <img src="{{asset('images/men.jpg')}}" alt="" class="img-fluid">
-              </figure>
-              <div class="text">
-                <span class="text-uppercase">Collections</span>
-                <h3>Men</h3>
+                <h3>{{$c->name}}</h3>
               </div>
             </a>
           </div>
         </div>
       </div>
     </div>
+    @endforeach
 
     <div class="site-section block-3 site-blocks-2 bg-light">
       <div class="container">
@@ -112,7 +92,7 @@
                   <div class="block-4-text p-4">
                     <h3><a href="#">{{$pro->title}}</a></h3>
                     <p class="mb-0">{!! Str::words($pro->description, 5, ' ...') !!}</p>
-                    <p class="text-primary font-weight-bold">&#8377;50</p>
+                    <p class="text-primary font-weight-bold">&#8377;{{$pro->price}}.00</p>
                   </div>
                 </div>
               </div>

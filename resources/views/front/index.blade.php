@@ -52,11 +52,12 @@
       </div>
     </div>
 
-    @foreach ($category as $c)
+
     <div class="site-section site-blocks-2">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
+            @foreach ($category as $c)
             <a class="block-2-item" href="#">
               <figure class="block-4-image">
                 <img src="{{asset('image/' . $c->image)}}" alt="" class="img-fluid">
@@ -66,11 +67,12 @@
                 <h3>{{$c->name}}</h3>
               </div>
             </a>
+            @endforeach
           </div>
         </div>
       </div>
     </div>
-    @endforeach
+
 
     <div class="site-section block-3 site-blocks-2 bg-light">
       <div class="container">
@@ -127,3 +129,60 @@
   </div>
 @include('front.layouts.footer')
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script>
+
+    	$(document).on("click", ".addtowishlist", function(event) {
+
+		event.preventDefault();
+        const base_url = "http://127.0.0.1:85";
+		const id = $(this).data('id');
+        // alert('hrllo');
+
+		$.ajax({
+			type : 'GET',
+            url: '/add_to_wishlist/' + id,
+			dataType:"json",
+
+			success: function (response) {
+				var msgType = response.msgType;
+				var msg = response.msg;
+
+				if (msgType == "success") {
+					onSuccessMsg(msg);
+				} else {
+					onErrorMsg(msg);
+				}
+				onWishlist();
+			}
+		});
+    });
+
+    $(document).on("click", ".site-cart", function(event) { //classname
+		event.preventDefault();
+
+		const qty = $("#quantity").val();//idname
+		const id = $(this).data('id');
+// alert('hello');
+// console.log("success");
+
+		$.ajax({
+			type : 'GET',
+			url: '/add_to_cart/' + id,
+			dataType:"json",
+
+			success: function (response) {
+				var msgType = response.msgType;
+				var msg = response.msg;
+  alert('msg');
+				if (msgType == "success") {
+					onSuccessMsg(msg);
+				} else {
+					onErrorMsg(msg);
+				}
+				onViewCart();
+			}
+		});
+    });
+</script>

@@ -43,10 +43,6 @@ class FrontController extends Controller
     }
 
 
-    public function cart(){
-        return view('front.cart');
-    }
-
     public function checkout(){
         return view('front.checkout');
     }

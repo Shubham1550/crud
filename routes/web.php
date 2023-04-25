@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
@@ -91,9 +92,16 @@ Route::get('/about',[FrontController::class,'about'])->name('front.about');
 Route::get('/shop',[FrontController::class,'shop'])->name('front.shop');
 Route::get('/shop_single/{id}',[FrontController::class,'shop_single'])->name('front.shop_single');
 Route::get('/contact',[FrontController::class,'contact'])->name('front.contact');
-Route::get('/cart',[FrontController::class,'cart'])->name('front.cart');
 Route::get('/checkout',[FrontController::class,'checkout'])->name('front.checkout');
 Route::get('/thankyou',[FrontController::class,'thankyou'])->name('front.thankyou');
+
+//cart
+Route::get('/cart',[CartController::class,'cart'])->name('cart.index');
+Route::get('add_to_wishlist/{id}', [CartController::class, 'addToWishlist'])->name('frontend.add_to_wishlist');
+// Route::get('/frontend/add_to_cart/{id}/{qty}', [App\Http\Controllers\Frontend\CartController::class, 'AddToCart'])->name('frontend.add_to_cart');
+
+
+Route::get('add_to_cart/{id}', [CartController::class, 'AddToCart'])->name('frontend.add_to_cart');
 
 
 
